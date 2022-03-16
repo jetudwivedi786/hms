@@ -5,6 +5,9 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 @Document(collection = "reservationManagement")
 @Data
 public class Reservation {
@@ -17,4 +20,5 @@ public class Reservation {
     private LocalDate checkOutDate;
     private String status;
     private int numberOfNight;
+
 }

@@ -11,7 +11,7 @@ public class Details {
 	@Id
 	private int id;
 	private String departmentName;
-	private Department detail;
+	private int noOfMember;
 
 
 

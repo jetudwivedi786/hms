@@ -21,21 +21,21 @@ import com.hmsLogin.repository.UserRepository;
 public class AuthController {
 	@Autowired
 	private UserRepository userRepository;
-	
+
 	@Autowired
 	private AuthenticationManager authenticationManager;
-	
+
 	@Autowired
 	private UserServices userServices;
-	
+
 	@Autowired
 	private JwtUtils jwtUtils;
-	
+
 	@GetMapping("/dashboard")
 	private String testingToken() {
 		return "Welcome to DASHBOARD "+ SecurityContextHolder.getContext().getAuthentication().getName();
 	}
-	
+
 	//to add new user
 	@PostMapping("/subs")
 	private ResponseEntity<?> subscribeClient(@RequestBody AuthenticationRequest authenticationRequest){
@@ -51,12 +51,12 @@ public class AuthController {
 			return ResponseEntity.ok(new AuthenticationResponse("Error during subscription for client "+ username));
 		}
 		return ResponseEntity.ok(new AuthenticationResponse("Successful subscription for client "+ username));
-		
+
 	}
-	
+
 	//to authenticate existing user
 	@PostMapping("/auth")
-    private ResponseEntity<?> authenticateClient(@RequestBody AuthenticationRequest authenticationRequest){
+	private ResponseEntity<?> authenticateClient(@RequestBody AuthenticationRequest authenticationRequest){
 		String username=authenticationRequest.getUsername();
 		String password=authenticationRequest.getPassword();
 		try {
@@ -68,10 +68,9 @@ public class AuthController {
 		}
 		UserDetails loadeduser=userServices.loadUserByUsername(username);
 		String generatedToken=jwtUtils.generateToken(loadeduser);
-		
+
 		return ResponseEntity.ok(new AuthenticationResponse(generatedToken));
 
 	}
-	
 
 }
