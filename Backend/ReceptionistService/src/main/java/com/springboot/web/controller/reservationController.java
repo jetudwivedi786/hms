@@ -25,6 +25,13 @@ public class reservationController {
 
         return ResponseEntity.ok(this.reservationservice.getReserve());
     }
+    @GetMapping("/getRoomById/{id}")
+    public ResponseEntity<?> getRoomById(@PathVariable Integer id)
+    {
+
+        return ResponseEntity.ok(this.reservationservice.getRoomById(id));
+    }
+
 
     @PostMapping("/addReservation")
     public ResponseEntity<?> addGuest(@RequestBody Reservation detail) {

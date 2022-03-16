@@ -49,6 +49,6 @@ public class staffController {
 	}
 //	@GetMapping("/getname/{name}")
 //	public ResponseEntity<?> getstaffbyname(@PathVariable String name) {
-//		return ResponseEntity.ok(this.repo.findByname(name));
+//		return ResponseEntity.ok(this.staffservice.findByname(name));
 //	}
 }

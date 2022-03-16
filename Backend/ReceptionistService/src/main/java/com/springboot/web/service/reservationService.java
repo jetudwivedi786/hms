@@ -14,4 +14,6 @@ public interface reservationService {
     void deleteReservation(Integer id);
 
     Object getReserve();
+
+    Object getRoomById(Integer id);
 }

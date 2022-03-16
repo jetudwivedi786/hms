@@ -15,4 +15,5 @@ public interface staffService {
     staffDetails updateStaff(staffDetails detail);
 
     void deleteById(Integer id);
+
 }
