@@ -36,4 +36,9 @@ public class Staffserviceimpl implements staffService{
     public void deleteById(Integer id) {
         this.repo.deleteById(id);
     }
+
+//    @Override
+//    public Object findByname(String name) {
+//        return this.repo.findByName(name);
+//    }
 }

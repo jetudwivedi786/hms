@@ -14,7 +14,7 @@ spring:
         - id: manager-service
           uri: lb://manager-service
           predicates:
-            - Path=/manageStaff/**,/manageRoom/**
+            - Path=/manageStaff/**,/manageRoom/**,/inventory/**
         #          filters:
         #            - name: CircuitBreaker
         #              args:

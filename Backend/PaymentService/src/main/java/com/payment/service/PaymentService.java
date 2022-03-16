@@ -26,6 +26,10 @@ public class PaymentService {
     	
         return new Random().nextBoolean()?"success":"failure";
     }
+
+    public Object getAllPayments() {
+        return repository.findAll();
+    }
 }
 
 

@@ -7,17 +7,31 @@ import com.springboot.web.service.reservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("reservation")
 public class reservationController {
+//    @Autowired
+//    private RestTemplate restTemplate;
     @Autowired
     private reservationService reservationservice;
 
     @GetMapping("/getReservation")
-    public ResponseEntity<?> getReserve(){
+    public ResponseEntity<?> getReserve()
+    {
+
         return ResponseEntity.ok(this.reservationservice.getReserve());
     }
+    @GetMapping("/getRoomById/{id}")
+    public ResponseEntity<?> getRoomById(@PathVariable Integer id)
+    {
+
+        return ResponseEntity.ok(this.reservationservice.getRoomById(id));
+    }
+
 
     @PostMapping("/addReservation")
     public ResponseEntity<?> addGuest(@RequestBody Reservation detail) {

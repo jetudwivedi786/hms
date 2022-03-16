@@ -16,7 +16,7 @@ public class Details {
 	private String name;
 	private String email;
 	private String gender;
-	private Address address;
+	private String address;
 
 
 

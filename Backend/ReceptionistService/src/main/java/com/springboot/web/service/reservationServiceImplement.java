@@ -30,5 +30,10 @@ public class reservationServiceImplement implements reservationService{
         return this.reservationrepo.findAll();
     }
 
+    @Override
+    public Object getRoomById(Integer id) {
+        return this.reservationrepo.findById(id);
+    }
+
 
 }
