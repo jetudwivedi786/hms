@@ -5,6 +5,9 @@ import com.springboot.web.inter.reservationRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class reservationServiceImplement implements reservationService{
     @Autowired
@@ -34,6 +37,19 @@ public class reservationServiceImplement implements reservationService{
     public Object getRoomById(Integer id) {
         return this.reservationrepo.findById(id);
     }
+@Override
+    public Object getByStatus() {
+        List<Reservation> lst=new ArrayList<>();
+        for (Reservation object:this.reservationrepo.findAll()
+             ) {
+            if(object.getStatus().equals("vacant")){
+                lst.add(object);
+            }
+
+        }
+        return lst;
+    }
+
 
 
 }

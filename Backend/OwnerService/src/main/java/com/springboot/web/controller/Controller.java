@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.web.details.Details;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("manageDepartment")
 public class Controller {
@@ -39,7 +41,13 @@ public class Controller {
 	}
 
 	@GetMapping("/getDepartment")
-	public ResponseEntity<?> getDepartment() {
-		return ResponseEntity.ok(this.ownerservice.getDepartment());
+	public List<Details> findAllUsers() {
+		return ownerservice.getUsers();
 	}
 }
+
+//	@GetMapping("/getDepartment")
+//	public ResponseEntity<?> getDepartment() {
+//		return ResponseEntity.ok(this.ownerservice.getDepartment());
+//	}
+//}

@@ -16,4 +16,6 @@ public interface reservationService {
     Object getReserve();
 
     Object getRoomById(Integer id);
+    Object getByStatus();
+
 }

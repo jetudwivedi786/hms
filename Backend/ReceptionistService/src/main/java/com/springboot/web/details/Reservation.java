@@ -13,7 +13,7 @@ import java.util.List;
 public class Reservation {
 
     @Id
-    private int id;
+    private int roomNo;
     private int noOfChildren;
     private int noOfAdult;
     private LocalDate checkInDate;
