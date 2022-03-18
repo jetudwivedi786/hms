@@ -31,6 +31,12 @@ public class reservationController {
 
         return ResponseEntity.ok(this.reservationservice.getRoomById(id));
     }
+    @GetMapping("/getRoomByStatus")
+    public ResponseEntity<?> getRoomByStatus()
+    {
+
+        return ResponseEntity.ok(this.reservationservice.getByStatus());
+    }
 
 
     @PostMapping("/addReservation")

@@ -21,24 +21,24 @@ import com.hmsLogin.repository.UserRepository;
 public class AuthController {
 	@Autowired
 	private UserRepository userRepository;
-
+	
 	@Autowired
 	private AuthenticationManager authenticationManager;
-
+	
 	@Autowired
 	private UserServices userServices;
-
+	
 	@Autowired
 	private JwtUtils jwtUtils;
-
+	
 	@GetMapping("/dashboard")
 	private String testingToken() {
 		return "Welcome to DASHBOARD "+ SecurityContextHolder.getContext().getAuthentication().getName();
 	}
-
+	
 	//to add new user
 	@PostMapping("/subs")
-	private ResponseEntity<?> subscribeClient(@RequestBody AuthenticationRequest authenticationRequest){
+	private ResponseEntity<?> subscribeClient(@RequestBody AuthenticationRequest authenticationRequest) throws Exception{
 		String username=authenticationRequest.getUsername();
 		String password=authenticationRequest.getPassword();
 		UserModel userModel=new UserModel();
@@ -48,29 +48,32 @@ public class AuthController {
 			userRepository.save(userModel);
 		}
 		catch(Exception e) {
-			return ResponseEntity.ok(new AuthenticationResponse("Error during subscription for client "+ username));
+			throw new Exception("Invalid",e);
 		}
 		return ResponseEntity.ok(new AuthenticationResponse("Successful subscription for client "+ username));
-
+		
 	}
-
+	
 	//to authenticate existing user
 	@PostMapping("/auth")
-	private ResponseEntity<?> authenticateClient(@RequestBody AuthenticationRequest authenticationRequest){
+    private ResponseEntity<?> authenticateClient(@RequestBody AuthenticationRequest authenticationRequest) throws Exception{
 		String username=authenticationRequest.getUsername();
 		String password=authenticationRequest.getPassword();
 		try {
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
 		}
-		catch(Exception E) {
-			return ResponseEntity.ok(new AuthenticationResponse(null));
+		catch(Exception e) {
+			throw new Exception("Invalid",e);
+
+
 
 		}
 		UserDetails loadeduser=userServices.loadUserByUsername(username);
 		String generatedToken=jwtUtils.generateToken(loadeduser);
-
+		
 		return ResponseEntity.ok(new AuthenticationResponse(generatedToken));
 
 	}
+	
 
 }
