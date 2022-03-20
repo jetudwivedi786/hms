@@ -3,14 +3,7 @@ package com.springboot.web.controller;
 import com.springboot.web.Service.ownerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.springboot.web.details.Details;
 
@@ -23,9 +16,8 @@ public class Controller {
 	private ownerService ownerservice;
 
 	@PostMapping("/addDepartment")
-	public ResponseEntity<?> addDepartment(@RequestBody Details detail) {
-		Details save = this.ownerservice.addDepartment(detail);
-		return ResponseEntity.ok(save);
+	public Details addDepartment(@RequestBody Details detail) {
+		return ownerservice.addDepartment(detail);
 	}
 
 	@PutMapping("/updateDepartment")
@@ -36,8 +28,11 @@ public class Controller {
 
 	@DeleteMapping("/deleteDepartment/{id}")
 	public int deleteDepartment(@PathVariable Integer id) {
-		this.ownerservice.deleteById(id);
+		ownerservice.deleteDepartment(id);
 		return id;
+
+
+
 	}
 
 	@GetMapping("/getDepartment")

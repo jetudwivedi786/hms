@@ -1,5 +1,6 @@
 package com.springboot.web.controller;
 
+import com.springboot.web.details.PaymentDetails;
 import com.springboot.web.service.guestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,9 +17,15 @@ import com.springboot.web.details.Details;
 import com.springboot.web.inter.contactRepo;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Arrays;
+import java.util.List;
+
 @RestController
 @RequestMapping("manageGuest")
 public class Controller {
+	@Autowired
+	private RestTemplate restTemplate;
+
 	@Autowired
 	private guestService guestservice;
 
@@ -56,6 +63,13 @@ public class Controller {
 	@GetMapping("/get/{id}")
 	public ResponseEntity<?> getById(@PathVariable Details id){
 		return ResponseEntity.ok(this.guestservice.getById(id));
+	}
+
+
+
+	@GetMapping("/getpayment")
+	public List<PaymentDetails> getPayment(){
+		return Arrays.asList(restTemplate.getForObject("http://payment-service/pay/getpayment", PaymentDetails[].class));
 	}
 
 }

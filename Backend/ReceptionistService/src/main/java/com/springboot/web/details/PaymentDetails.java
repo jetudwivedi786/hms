@@ -1,22 +1,24 @@
-package com.hmsLogin.model;
+package com.springboot.web.details;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.web.bind.annotation.CrossOrigin;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection="USERS")
-public class UserModel {
-
-
+public class PaymentDetails {
+	
 	@Id
-	private String id;
-	private String role;
-	private String username;
-	private String password;
+    private int orderId;
+	private int ammount;
+    private String paymentStatus;
+    private String txId;
+    
 
 }
+
+
+

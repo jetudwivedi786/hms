@@ -12,6 +12,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import com.hmsLogin.repository.UserRepository;
@@ -41,9 +42,11 @@ public class AuthController {
 	private ResponseEntity<?> subscribeClient(@RequestBody AuthenticationRequest authenticationRequest) throws Exception{
 		String username=authenticationRequest.getUsername();
 		String password=authenticationRequest.getPassword();
+		String role=authenticationRequest.getRole();
 		UserModel userModel=new UserModel();
 		userModel.setUsername(username);
-		userModel.setPassword(password);
+		userModel.setPassword(new BCryptPasswordEncoder().encode(password));
+		userModel.setRole(role);
 		try {
 			userRepository.save(userModel);
 		}
@@ -54,7 +57,7 @@ public class AuthController {
 		
 	}
 	
-	//to authenticate existing user
+		//to authenticate existing user
 	@PostMapping("/auth")
     private ResponseEntity<?> authenticateClient(@RequestBody AuthenticationRequest authenticationRequest) throws Exception{
 		String username=authenticationRequest.getUsername();
@@ -71,7 +74,7 @@ public class AuthController {
 		UserDetails loadeduser=userServices.loadUserByUsername(username);
 		String generatedToken=jwtUtils.generateToken(loadeduser);
 		
-		return ResponseEntity.ok(new AuthenticationResponse(generatedToken));
+		return ResponseEntity.ok(new AuthenticationResponse(generatedToken,loadeduser.getAuthorities().toString()));
 
 	}
 	

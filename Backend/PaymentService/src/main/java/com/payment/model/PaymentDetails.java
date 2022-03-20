@@ -13,10 +13,7 @@ public class PaymentDetails {
 	
 	@Id
     private int orderId;
-	
 	private int amount;
-
-	
     private String paymentStatus;
     private String txId;
     

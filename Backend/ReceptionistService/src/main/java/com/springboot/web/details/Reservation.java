@@ -20,5 +20,6 @@ public class Reservation {
     private LocalDate checkOutDate;
     private String status;
     private int numberOfNight;
+    private PaymentDetails paymentDetails;
 
 }

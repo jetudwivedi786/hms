@@ -1,5 +1,6 @@
 package com.payment.service;
 
+import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
@@ -27,8 +28,14 @@ public class PaymentService {
         return new Random().nextBoolean()?"success":"failure";
     }
 
-    public Object getAllPayments() {
-        return repository.findAll();
+
+    public List<PaymentDetails> getPayment() {
+        List<PaymentDetails> paymentDetails = repository.findAll();
+        return paymentDetails;
+    }
+
+    public PaymentDetails getbyid(Integer id) {
+        return this.repository.findById(id).get();
     }
 }
 
