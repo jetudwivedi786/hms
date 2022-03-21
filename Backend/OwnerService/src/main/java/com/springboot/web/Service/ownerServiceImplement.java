@@ -1,7 +1,7 @@
 package com.springboot.web.Service;
 
-import com.springboot.web.details.Details;
-import com.springboot.web.inter.OwnerRepo;
+import com.springboot.web.model.Details;
+import com.springboot.web.repository.OwnerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,8 +34,9 @@ public class ownerServiceImplement implements ownerService{
     }
 
     @Override
-    public void deleteDepartment(Integer id) {
+    public Object deleteDepartment(Integer id) {
         this.ownerRepo.deleteById(id);
+        return null;
     }
 
 

@@ -1,8 +1,7 @@
 package com.springboot.web.service;
 
-import com.springboot.web.details.InventoryDetails;
-import com.springboot.web.details.roomDetails;
-import com.springboot.web.inter.inventoryRepo;
+import com.springboot.web.model.InventoryDetails;
+import com.springboot.web.repository.inventoryRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

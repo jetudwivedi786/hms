@@ -1,8 +1,7 @@
 package com.springboot.web.service;
 
 
-import com.springboot.web.details.Reservation;
-import org.springframework.stereotype.Service;
+import com.springboot.web.model.Reservation;
 
 public interface reservationService {
 

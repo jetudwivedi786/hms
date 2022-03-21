@@ -1,8 +1,8 @@
 package com.springboot.web.service;
 
-import com.springboot.web.details.PaymentDetails;
-import com.springboot.web.details.Reservation;
-import com.springboot.web.inter.reservationRepo;
+import com.springboot.web.model.PaymentDetails;
+import com.springboot.web.model.Reservation;
+import com.springboot.web.repository.reservationRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

@@ -1,6 +1,6 @@
 package com.springboot.web.Service;
 
-import com.springboot.web.details.Details;
+import com.springboot.web.model.Details;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public interface ownerService {
     Details addDepartment(Details detail);
 
 
-    void deleteDepartment(Integer id);
+    Object deleteDepartment(Integer id);
 
 //    Object getDepartment();
 }

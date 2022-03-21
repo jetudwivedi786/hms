@@ -1,11 +1,10 @@
 package com.springboot.web.service;
 
-import com.springboot.web.details.staffDetails;
-import com.springboot.web.inter.staffRepo;
+import com.springboot.web.model.staffDetails;
+import com.springboot.web.repository.staffRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 @Service
 public class Staffserviceimpl implements staffService{
     @Autowired

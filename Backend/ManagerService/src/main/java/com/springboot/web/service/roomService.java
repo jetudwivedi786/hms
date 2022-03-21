@@ -1,7 +1,6 @@
 package com.springboot.web.service;
 
-import com.springboot.web.details.roomDetails;
-import com.springboot.web.details.staffDetails;
+import com.springboot.web.model.roomDetails;
 
 import java.util.List;
 

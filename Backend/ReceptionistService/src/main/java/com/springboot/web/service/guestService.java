@@ -1,6 +1,6 @@
 package com.springboot.web.service;
 
-import com.springboot.web.details.Details;
+import com.springboot.web.model.Details;
 
 import java.util.List;
 

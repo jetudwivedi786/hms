@@ -1,7 +1,6 @@
 package com.springboot.web.controller;
-import com.springboot.web.details.roomDetails;
-import com.springboot.web.details.staffDetails;
-import com.springboot.web.inter.roomRepo;
+import com.springboot.web.model.roomDetails;
+import com.springboot.web.repository.roomRepo;
 import com.springboot.web.service.roomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

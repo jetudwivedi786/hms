@@ -1,12 +1,15 @@
 package com.springboot.web.controller;
 
 import com.springboot.web.Service.ownerService;
+import com.springboot.web.model.roomDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.springboot.web.details.Details;
+import com.springboot.web.model.Details;
+import org.springframework.web.client.RestTemplate;
 
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -14,6 +17,8 @@ import java.util.List;
 public class Controller {
 	@Autowired
 	private ownerService ownerservice;
+	@Autowired
+	private RestTemplate restTemplate;
 
 	@PostMapping("/addDepartment")
 	public Details addDepartment(@RequestBody Details detail) {
@@ -27,10 +32,9 @@ public class Controller {
 	}
 
 	@DeleteMapping("/deleteDepartment/{id}")
-	public int deleteDepartment(@PathVariable Integer id) {
+	public String deleteDepartment(@PathVariable Integer id) {
 		ownerservice.deleteDepartment(id);
-		return id;
-
+		return ("id "+id);
 
 
 	}
@@ -39,6 +43,14 @@ public class Controller {
 	public List<Details> findAllUsers() {
 		return ownerservice.getUsers();
 	}
+
+
+	@GetMapping("/getRoomOfManager")
+	public List<roomDetails> getPayment() {
+		return Arrays.asList(restTemplate.getForObject("http://manager-service/manageRoom/getrooms", roomDetails[].class));
+	}
+
+
 }
 
 //	@GetMapping("/getDepartment")

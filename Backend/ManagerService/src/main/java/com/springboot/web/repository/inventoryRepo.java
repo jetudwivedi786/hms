@@ -1,6 +1,6 @@
-package com.springboot.web.inter;
+package com.springboot.web.repository;
 
-import com.springboot.web.details.InventoryDetails;
+import com.springboot.web.model.InventoryDetails;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

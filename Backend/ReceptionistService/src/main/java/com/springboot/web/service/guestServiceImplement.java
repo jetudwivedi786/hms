@@ -1,7 +1,7 @@
 package com.springboot.web.service;
 
-import com.springboot.web.details.Details;
-import com.springboot.web.inter.contactRepo;
+import com.springboot.web.model.Details;
+import com.springboot.web.repository.contactRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

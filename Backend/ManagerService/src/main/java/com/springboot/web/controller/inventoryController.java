@@ -1,7 +1,6 @@
 package com.springboot.web.controller;
 
-import com.springboot.web.details.InventoryDetails;
-import com.springboot.web.details.roomDetails;
+import com.springboot.web.model.InventoryDetails;
 import com.springboot.web.service.inventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

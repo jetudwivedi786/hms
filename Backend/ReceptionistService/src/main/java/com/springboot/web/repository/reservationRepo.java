@@ -1,6 +1,6 @@
-package com.springboot.web.inter;
+package com.springboot.web.repository;
 
-import com.springboot.web.details.Reservation;
+import com.springboot.web.model.Reservation;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface reservationRepo extends MongoRepository<Reservation,Integer> {

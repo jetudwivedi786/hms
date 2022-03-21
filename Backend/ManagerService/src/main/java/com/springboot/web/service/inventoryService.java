@@ -1,7 +1,6 @@
 package com.springboot.web.service;
 
-import com.springboot.web.details.InventoryDetails;
-import com.springboot.web.details.roomDetails;
+import com.springboot.web.model.InventoryDetails;
 
 public interface inventoryService {
 

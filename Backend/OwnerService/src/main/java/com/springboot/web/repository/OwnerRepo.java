@@ -1,8 +1,8 @@
-package com.springboot.web.inter;
+package com.springboot.web.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.springboot.web.details.Details;
+import com.springboot.web.model.Details;
 
 public interface OwnerRepo extends MongoRepository<Details, Integer> {
 

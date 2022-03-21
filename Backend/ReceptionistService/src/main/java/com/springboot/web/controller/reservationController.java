@@ -1,15 +1,10 @@
 package com.springboot.web.controller;
 
-import com.springboot.web.details.Details;
-import com.springboot.web.details.Reservation;
-import com.springboot.web.inter.reservationRepo;
+import com.springboot.web.model.Reservation;
 import com.springboot.web.service.reservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("reservation")

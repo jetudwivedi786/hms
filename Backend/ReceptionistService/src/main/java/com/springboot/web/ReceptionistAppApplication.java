@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 
 @EnableEurekaClient
 @SpringBootApplication
-public class ContactWebAppApplication {
+public class ReceptionistAppApplication {
 
 	@LoadBalanced
 	@Bean
@@ -18,7 +18,7 @@ public class ContactWebAppApplication {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(ContactWebAppApplication.class, args);
+		SpringApplication.run(ReceptionistAppApplication.class, args);
 		System.out.println("Receptionist-Service running------------------------------------");
 
 	}

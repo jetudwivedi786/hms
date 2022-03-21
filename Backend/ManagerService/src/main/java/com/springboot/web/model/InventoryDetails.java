@@ -1,4 +1,4 @@
-package com.springboot.web.details;
+package com.springboot.web.model;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
