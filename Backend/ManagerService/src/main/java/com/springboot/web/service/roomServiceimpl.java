@@ -16,10 +16,10 @@ public class roomServiceimpl implements roomService {
 //    private roomService roomservice;
 
 
-    @Override
-    public List<roomDetails> getAllRooms() {
-        return roomrepo.findAll();
-    }
+//    @Override
+//    public List<roomDetails> getAllRooms() {
+//        return roomrepo.findAll();
+//    }
 
     @Override
     public roomDetails addrooms(roomDetails roomdetails) {
@@ -41,7 +41,12 @@ public class roomServiceimpl implements roomService {
         return roomrepo.findById(id);
     }
 
+    @Override
+    public List<roomDetails> getAlRooms() {
+        List<roomDetails> users = roomrepo.findAll();
+        System.out.println("Getting data from DB : " + users);
+        return users;    }
+    }
 
 
 
-}

@@ -5,6 +5,9 @@ import com.springboot.web.service.roomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 @RestController
 @RequestMapping("/manageRoom")
 public class roomController {
@@ -27,10 +30,9 @@ public ResponseEntity<?> getroombyid(@PathVariable Integer id) {
 
 
     @GetMapping("/getrooms")
-    public ResponseEntity<?> getallroom() {
-        return ResponseEntity.ok(this.roomservice.getAllRooms());
+    public List<roomDetails> getallroom() {
+        return this.roomservice.getAlRooms();
     }
-
     @PostMapping("/addrooms")
     public roomDetails addrooms(@RequestBody roomDetails roomdetails) {
         return this.roomservice.addrooms(roomdetails);

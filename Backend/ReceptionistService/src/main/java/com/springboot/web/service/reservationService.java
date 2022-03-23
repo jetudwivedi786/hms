@@ -3,6 +3,8 @@ package com.springboot.web.service;
 
 import com.springboot.web.model.Reservation;
 
+import java.util.List;
+
 public interface reservationService {
 
 
@@ -12,9 +14,10 @@ public interface reservationService {
 
     void deleteReservation(Integer id);
 
-    Object getReserve();
+//    Object getReserve();
 
     Object getRoomById(Integer id);
     Object getByStatus();
 
+    List<Reservation> getReserved();
 }

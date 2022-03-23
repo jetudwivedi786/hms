@@ -17,10 +17,6 @@ public class guestServiceImplement implements guestService{
         return this.contactrepo.findAll();
     }
 
-    @Override
-    public Details updateGuest(Details details) {
-        return this.contactrepo.save(details);
-    }
 
     @Override
     public void deleteById(Integer id) {
@@ -35,5 +31,15 @@ public class guestServiceImplement implements guestService{
     @Override
     public Object getById(Details id) {
         return contactrepo.save(id);
+    }
+
+    @Override
+    public List<Details> getAlGuest() {
+        return this.contactrepo.findAll();
+    }
+
+    @Override
+    public Details updateGuest(Details detail) {
+        return this.contactrepo.save(detail);
     }
 }

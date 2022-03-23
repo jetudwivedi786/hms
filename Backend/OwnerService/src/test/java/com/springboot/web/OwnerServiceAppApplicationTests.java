@@ -1,8 +1,7 @@
 package com.springboot.web;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -36,6 +35,22 @@ import org.springframework.test.context.junit4.SpringRunner;
 		Details det=new Details(2,"jeetu",23);
 		when(ownerRepo.save(det)).thenReturn(det);
 		assertEquals(det,ownerservice.addDepartment(det));
+	}
+
+	@Test
+
+	public void update() {
+		Details updateDetails =  new Details(23,"manager",12
+		);
+		ownerservice.updateDepartment(updateDetails);
+		verify(ownerRepo,times(1)).save(updateDetails);
+	}
+
+	@Test
+	public void delete() {
+		Integer userID = 23;
+		ownerservice.deleteDepartment(userID);
+		verify(ownerRepo,times(1)).deleteById(userID);
 	}
 
 

@@ -7,6 +7,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
 
+import java.util.ArrayList;
+
 @Document(collection = "staffManagement")
 @Data
 @NoArgsConstructor
@@ -20,6 +22,9 @@ public class staffDetails {
 	private Long salary;
 	private String email;
 	private EmployeeAddress employeeAddress;
+
+
+
 
 //	public String getName() {
 //		return name;

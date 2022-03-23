@@ -29,7 +29,7 @@ public class Controller {
 	private guestService guestservice;
 
 	@PostMapping("/add")
-	public ResponseEntity<?> addGuest(@RequestBody Details detail) {
+	public ResponseEntity<?> addGues(@RequestBody Details detail) {
 		Details save = this.guestservice.save(detail);
 		return ResponseEntity.ok(save);
 	}
@@ -40,8 +40,10 @@ public class Controller {
 //		return ResponseEntity.ok(updateEntity);
 //	}
 	@PutMapping("/update")
-	public Details updateGusest(@RequestBody Details details){
-		return this.guestservice.updateGuest(details);
+	public ResponseEntity<?> updateGuest(@RequestBody Details detail){
+		Details updateEntity = this.guestservice.updateGuest(detail);
+		return ResponseEntity.ok(updateEntity);
+
 	}
 
 	@DeleteMapping("/delete/{id}")
@@ -49,16 +51,17 @@ public class Controller {
 		this.guestservice.deleteById(id);
 		return ("Deleted id is :"+id);
 	}
-//
-//	@GetMapping("/get")
-//	public ResponseEntity<?> getAllGuest() {
-//		return ResponseEntity.ok(this.contactrepo.findAll());
-//	}
 
+
+//	@GetMapping("/get")
+//	public ResponseEntity<?> getAllGuest(){
+//		return ResponseEntity.ok(this.guestservice.getAllGuest());
+//	}
 	@GetMapping("/get")
-	public ResponseEntity<?> getAllGuest(){
-		return ResponseEntity.ok(this.guestservice.getAllGuest());
+	public List<Details> getAllGuest() {
+		return guestservice.getAlGuest();
 	}
+
 	@GetMapping("/get/{id}")
 	public ResponseEntity<?> getById(@PathVariable Details id){
 		return ResponseEntity.ok(this.guestservice.getById(id));

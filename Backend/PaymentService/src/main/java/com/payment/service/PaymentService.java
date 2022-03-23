@@ -25,7 +25,7 @@ public class PaymentService {
 
     private String paymentStatus(){
     	
-        return new Random().nextBoolean()?"success":"failure";
+        return new Random().nextBoolean()?"success":"success";
     }
 
 

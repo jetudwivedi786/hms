@@ -1,8 +1,12 @@
 package com.springboot.web.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class EmployeeAddress {
     private Long houseNo;
     private String area;

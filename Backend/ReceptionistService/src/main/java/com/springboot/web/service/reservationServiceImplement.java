@@ -34,10 +34,10 @@ public class reservationServiceImplement implements reservationService{
         this.reservationrepo.deleteById(id);
     }
 
-    @Override
-    public Object getReserve() {
-        return this.reservationrepo.findAll();
-    }
+//    @Override
+//    public Object getReserve() {
+//        return this.reservationrepo.findAll();
+//    }
 
     @Override
     public Object getRoomById(Integer id) {
@@ -55,6 +55,12 @@ public class reservationServiceImplement implements reservationService{
         }
         return lst;
     }
+
+    @Override
+    public List<Reservation> getReserved() {
+        return this.reservationrepo.findAll();
+    }
+
 
 
 
