@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Document(collection = "departmentManagement")
 @Data
-//@NoArgsConstructor
+@NoArgsConstructor
 @AllArgsConstructor
 public class Details {
 	@Id
