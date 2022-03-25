@@ -2,6 +2,7 @@ package com.springboot.web.controller;
 
 import com.springboot.web.Service.ownerService;
 import com.springboot.web.model.roomDetails;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
 import java.util.List;
-
+@OpenAPIDefinition
 @RestController
 @RequestMapping("manageDepartment")
 public class Controller {
