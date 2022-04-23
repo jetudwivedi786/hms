@@ -1,0 +1,146 @@
+2022-04-23 12:41:30,948 INFO  SLF4JLogger:76 - [] Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:976)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576)
+	... 5 common frames omitted
+2022-04-23 12:41:32,401 INFO  SLF4JLogger:71 - [] Opened connection [connectionId{localValue:29, serverValue:231}] to localhost:27017
+2022-04-23 12:41:32,402 INFO  SLF4JLogger:71 - [] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1424629400}
+2022-04-23 12:42:38,209 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 12:47:38,221 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 12:52:38,093 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 12:57:38,041 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 13:02:38,048 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 13:07:38,051 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 13:12:38,067 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 13:17:38,070 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 13:22:38,086 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 13:27:38,098 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 13:32:38,106 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 16:52:05,212 INFO  SLF4JLogger:76 - [] Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:976)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576)
+	... 5 common frames omitted
+2022-04-23 16:52:06,404 INFO  SLF4JLogger:71 - [] Opened connection [connectionId{localValue:30, serverValue:241}] to localhost:27017
+2022-04-23 16:52:06,405 INFO  SLF4JLogger:71 - [] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=736709600}
+2022-04-23 17:27:37,070 INFO  SLF4JLogger:76 - [] Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:976)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576)
+	... 5 common frames omitted
+2022-04-23 17:27:37,858 INFO  SLF4JLogger:71 - [] Opened connection [connectionId{localValue:31, serverValue:246}] to localhost:27017
+2022-04-23 17:27:37,858 INFO  SLF4JLogger:71 - [] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=783798100}
+2022-04-23 17:32:00,529 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 17:37:00,530 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 17:42:00,540 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 17:47:00,542 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 17:52:00,548 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 17:57:00,563 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 18:02:00,576 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 18:07:00,592 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 18:12:00,597 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 18:17:00,606 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 21:22:31,112 INFO  SLF4JLogger:76 - [] Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:976)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576)
+	... 5 common frames omitted
+2022-04-23 21:22:32,384 INFO  SLF4JLogger:71 - [] Opened connection [connectionId{localValue:32, serverValue:256}] to localhost:27017
+2022-04-23 21:22:32,384 INFO  SLF4JLogger:71 - [] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1253472000}
+2022-04-23 21:23:04,680 INFO  SLF4JLogger:76 - [] Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:976)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576)
+	... 5 common frames omitted
+2022-04-23 21:23:05,245 INFO  SLF4JLogger:71 - [] Opened connection [connectionId{localValue:33, serverValue:261}] to localhost:27017
+2022-04-23 21:23:05,246 INFO  SLF4JLogger:71 - [] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=562347900}
+2022-04-23 22:07:55,046 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 22:12:55,059 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 22:17:55,075 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 22:22:55,087 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 22:27:55,099 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 22:32:55,116 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 22:37:55,119 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 22:42:55,129 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 22:47:55,135 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 22:52:55,154 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 22:57:55,157 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 23:02:55,165 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 23:07:55,166 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 23:12:55,173 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration
+2022-04-23 23:17:55,186 INFO  ConfigClusterResolver:43 - [] Resolving eureka endpoints via configuration

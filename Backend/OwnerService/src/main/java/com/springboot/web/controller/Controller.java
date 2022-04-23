@@ -1,53 +1,60 @@
 package com.springboot.web.controller;
 
-import com.springboot.web.Service.ownerService;
+import com.springboot.web.service.OwnerService;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.springboot.web.details.Details;
+import com.springboot.web.model.Details;
+import org.springframework.web.client.RestTemplate;
 
+import javax.validation.Valid;
 import java.util.List;
-
+@OpenAPIDefinition
 @RestController
 @RequestMapping("manageDepartment")
 public class Controller {
+
+	Logger logger= LoggerFactory.getLogger(Controller.class);
 	@Autowired
-	private ownerService ownerservice;
+	private OwnerService ownerservice;
+	@Autowired
+	private RestTemplate restTemplate;
 
 	@PostMapping("/addDepartment")
-	public ResponseEntity<?> addDepartment(@RequestBody Details detail) {
-		Details save = this.ownerservice.addDepartment(detail);
-		return ResponseEntity.ok(save);
+	public Details addDepartment(@Valid  @RequestBody Details detail)
+	{
+		System.out.println(detail);
+		return ownerservice.addDepartment(detail);
 	}
 
 	@PutMapping("/updateDepartment")
-	public ResponseEntity<?> updateDepartment(@RequestBody Details detail) {
+	public ResponseEntity<Details> updateDepartment(@Valid @RequestBody Details detail) {
 		Details updateEntity = this.ownerservice.updateDepartment(detail);
 		return ResponseEntity.ok(updateEntity);
 	}
 
 	@DeleteMapping("/deleteDepartment/{id}")
-	public int deleteDepartment(@PathVariable Integer id) {
-		this.ownerservice.deleteById(id);
-		return id;
+	public void deleteDepartment(@PathVariable Integer id) {
+		ownerservice.deleteDepartment(id);
 	}
 
 	@GetMapping("/getDepartment")
 	public List<Details> findAllUsers() {
-		return ownerservice.getUsers();
+		List<Details> det=ownerservice.getUsers();
+		logger.info("info");
+		logger.warn("warn");
+		logger.error("error");
+		logger.debug("debug");
+		logger.trace("trace");
+		return det;
 	}
-}
 
-//	@GetMapping("/getDepartment")
-//	public ResponseEntity<?> getDepartment() {
-//		return ResponseEntity.ok(this.ownerservice.getDepartment());
-//	}
-//}
+
+
+
+
+}

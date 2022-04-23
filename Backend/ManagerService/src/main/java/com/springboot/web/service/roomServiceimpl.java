@@ -1,35 +1,25 @@
 package com.springboot.web.service;
 
-import com.springboot.web.details.roomDetails;
-import com.springboot.web.details.staffDetails;
-import com.springboot.web.inter.roomRepo;
+import com.springboot.web.model.roomDetails;
+import com.springboot.web.repository.RoomRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.repository.query.FluentQuery;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.function.Function;
+
 @Service
 
 public class roomServiceimpl implements roomService {
     @Autowired
-    private roomRepo roomrepo;
+    private RoomRepo roomrepo;
 //    @Autowired
 //    private roomService roomservice;
 
 
-    @Override
-    public List<roomDetails> getAllRooms() {
-        return roomrepo.findAll();
-    }
+//    @Override
+//    public List<roomDetails> getAllRooms() {
+//        return roomrepo.findAll();
+//    }
 
     @Override
     public roomDetails addrooms(roomDetails roomdetails) {
@@ -51,7 +41,12 @@ public class roomServiceimpl implements roomService {
         return roomrepo.findById(id);
     }
 
+    @Override
+    public List<roomDetails> getAlRooms() {
+        List<roomDetails> users = roomrepo.findAll();
+        System.out.println("Getting data from DB : " + users);
+        return users;    }
+    }
 
 
 
-}

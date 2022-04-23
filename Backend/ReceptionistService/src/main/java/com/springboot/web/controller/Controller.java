@@ -1,6 +1,8 @@
 package com.springboot.web.controller;
 
-import com.springboot.web.service.guestService;
+import com.springboot.web.model.PaymentDetails;
+import com.springboot.web.service.GuestService;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,30 +14,33 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.web.details.Details;
-import com.springboot.web.inter.contactRepo;
+import com.springboot.web.model.Details;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Arrays;
+import java.util.List;
+@OpenAPIDefinition
 @RestController
 @RequestMapping("manageGuest")
 public class Controller {
 	@Autowired
-	private guestService guestservice;
+	private RestTemplate restTemplate;
+
+	@Autowired
+	private GuestService guestservice;
 
 	@PostMapping("/add")
-	public ResponseEntity<?> addGuest(@RequestBody Details detail) {
+	public ResponseEntity<?> addGues(@RequestBody Details detail) {
 		Details save = this.guestservice.save(detail);
 		return ResponseEntity.ok(save);
 	}
 
-//	@PutMapping("/update")
-//	public ResponseEntity<?> updateGuest(@RequestBody Details detail) {
-//		Details updateEntity = this.contactrepo.save(detail);
-//		return ResponseEntity.ok(updateEntity);
-//	}
+
 	@PutMapping("/update")
-	public Details updateGusest(@RequestBody Details details){
-		return this.guestservice.updateGuest(details);
+	public ResponseEntity<?> updateGuest(@RequestBody Details detail){
+		Details updateEntity = this.guestservice.updateGuest(detail);
+		return ResponseEntity.ok(updateEntity);
+
 	}
 
 	@DeleteMapping("/delete/{id}")
@@ -43,19 +48,24 @@ public class Controller {
 		this.guestservice.deleteById(id);
 		return ("Deleted id is :"+id);
 	}
-//
-//	@GetMapping("/get")
-//	public ResponseEntity<?> getAllGuest() {
-//		return ResponseEntity.ok(this.contactrepo.findAll());
-//	}
+
+
 
 	@GetMapping("/get")
-	public ResponseEntity<?> getAllGuest(){
-		return ResponseEntity.ok(this.guestservice.getAllGuest());
+	public List<Details> getAllGuest() {
+		return guestservice.getAlGuest();
 	}
+
 	@GetMapping("/get/{id}")
 	public ResponseEntity<?> getById(@PathVariable Details id){
 		return ResponseEntity.ok(this.guestservice.getById(id));
+	}
+
+
+
+	@GetMapping("/getpayment")
+	public List<PaymentDetails> getPayment(){
+		return Arrays.asList(restTemplate.getForObject("http://payment-service/pay/getpayment", PaymentDetails[].class));
 	}
 
 }

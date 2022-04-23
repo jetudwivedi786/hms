@@ -1,8 +1,6 @@
 package com.springboot.web.service;
 
-import com.springboot.web.details.staffDetails;
-
-import java.util.List;
+import com.springboot.web.model.staffDetails;
 
 public interface staffService {
 
