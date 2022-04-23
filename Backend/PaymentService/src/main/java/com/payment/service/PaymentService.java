@@ -5,6 +5,7 @@ import java.util.Random;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import com.payment.model.PaymentDetails;
@@ -17,7 +18,11 @@ public class PaymentService {
     @Autowired
     private PaymentRepository repository;
 
+    @Autowired
+    private KafkaTemplate <String,String> kafkaTemplate;
+
     public PaymentDetails doPay(PaymentDetails payment){
+        kafkaTemplate.send("transaction","Transaction successful with order ID  "+payment.getOrderId());
         payment.setPaymentStatus(paymentStatus());
         System.out.println(payment.toString());
 //        payment.setTxId(UUID.randomUUID().toString());

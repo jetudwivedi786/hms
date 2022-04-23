@@ -1,7 +1,7 @@
 package com.springboot.web.service;
 
 import com.springboot.web.model.roomDetails;
-import com.springboot.web.repository.roomRepo;
+import com.springboot.web.repository.RoomRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ import java.util.List;
 
 public class roomServiceimpl implements roomService {
     @Autowired
-    private roomRepo roomrepo;
+    private RoomRepo roomrepo;
 //    @Autowired
 //    private roomService roomservice;
 

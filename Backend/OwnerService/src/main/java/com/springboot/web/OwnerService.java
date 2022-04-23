@@ -13,7 +13,6 @@ public class OwnerService {
 
 	public static void main(String[] args) {
 		SpringApplication.run(OwnerService.class, args);
-		System.out.println("owner-Service running------------------------------------");
 
 	}
 	@LoadBalanced

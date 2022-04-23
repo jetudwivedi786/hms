@@ -19,7 +19,6 @@ public class ReceptionistAppApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ReceptionistAppApplication.class, args);
-		System.out.println("Receptionist-Service running------------------------------------");
 
 	}
 }

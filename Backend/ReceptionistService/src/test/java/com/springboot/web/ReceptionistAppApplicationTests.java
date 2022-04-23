@@ -3,18 +3,15 @@ package com.springboot.web;
 		import static org.junit.jupiter.api.Assertions.assertEquals;
 		import static org.mockito.Mockito.*;
 
-		import java.util.ArrayList;
-		import java.util.stream.Collectors;
+        import java.util.stream.Collectors;
 		import java.util.stream.Stream;
 
 		import com.springboot.web.model.Details;
-		import com.springboot.web.model.Reservation;
-		import com.springboot.web.repository.contactRepo;
-		import com.springboot.web.repository.reservationRepo;
-		import com.springboot.web.service.guestService;
-		import com.springboot.web.service.reservationService;
-		import org.apache.tomcat.jni.Address;
-		import org.junit.Test;
+        import com.springboot.web.repository.GuestRepository;
+		import com.springboot.web.repository.ReservationRepository;
+		import com.springboot.web.service.GuestService;
+		import com.springboot.web.service.ReservationService;
+        import org.junit.Test;
 		import org.junit.runner.RunWith;
 		import org.springframework.beans.factory.annotation.Autowired;
 		import org.springframework.boot.test.context.SpringBootTest;
@@ -26,16 +23,16 @@ package com.springboot.web;
 @SpringBootTest
 public  class ReceptionistAppApplicationTests {
 	@Autowired
-	private guestService guestservice;
+	private GuestService guestservice;
 	@MockBean
-	private contactRepo contactrepo;
+	private GuestRepository contactrepo;
 
 
 	@Autowired
-	private reservationService reservationservice;
+	private ReservationService reservationservice;
 
 	@MockBean
-	private reservationRepo reservationrepo;
+	private ReservationRepository reservationrepo;
 
 	@Test
 	public void getAlGuestTest() {

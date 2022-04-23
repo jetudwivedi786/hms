@@ -15,42 +15,45 @@ spring:
           uri: lb://manager-service
           predicates:
             - Path=/manageStaff/**,/manageRoom/**,/inventory/**
-        #          filters:
-        #            - name: CircuitBreaker
-        #              args:
-        #                name: order-service
-        #                fallbackuri: forward:/orderFallback
+
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: manager-service
+                fallbackuri: forward:/managerFallback
 
 
         - id: owner-service
           uri: lb://owner-service
           predicates:
             - Path=/manageDepartment/**
-        #          filters:
-        #            - name: CircuitBreaker
-        #              args:
-        #                name: shopping-service
-        #                fallbackuri: forward:/shopFallback
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: owner-service
+                fallbackuri: forward:/ownerFallback
+
         - id: receptionist-service
           uri: lb://receptionist-service
           predicates:
             - Path=/manageGuest/**,/reservation/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: receptionist-service
+                fallbackuri: forward:/receptionistFallback
 
 
-
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
 #
-#
-#
-#hystrix:
-#  command:
-#    fallbackcmd:
-#      execution:
-#        isolation:
-#          thread:
-#            timeoutInMilliseconds: 5000
-#
-#management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include: hystrix.stream
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream

@@ -8,7 +8,6 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
 
 @EnableEurekaClient
 @EnableHystrixDashboard
-//@EnableHystrix
 @SpringBootApplication
 public class HystrixDashboardApplication {
 

@@ -19,6 +19,10 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		<spring-cloud.version>2021.0.1</spring-cloud.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
 
 			<dependency>
 				<groupId>org.projectlombok</groupId>

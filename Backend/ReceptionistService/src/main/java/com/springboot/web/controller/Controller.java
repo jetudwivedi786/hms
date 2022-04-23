@@ -1,7 +1,8 @@
 package com.springboot.web.controller;
 
 import com.springboot.web.model.PaymentDetails;
-import com.springboot.web.service.guestService;
+import com.springboot.web.service.GuestService;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,7 +19,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
 import java.util.List;
-
+@OpenAPIDefinition
 @RestController
 @RequestMapping("manageGuest")
 public class Controller {
@@ -26,7 +27,7 @@ public class Controller {
 	private RestTemplate restTemplate;
 
 	@Autowired
-	private guestService guestservice;
+	private GuestService guestservice;
 
 	@PostMapping("/add")
 	public ResponseEntity<?> addGues(@RequestBody Details detail) {
@@ -34,11 +35,7 @@ public class Controller {
 		return ResponseEntity.ok(save);
 	}
 
-//	@PutMapping("/update")
-//	public ResponseEntity<?> updateGuest(@RequestBody Details detail) {
-//		Details updateEntity = this.contactrepo.save(detail);
-//		return ResponseEntity.ok(updateEntity);
-//	}
+
 	@PutMapping("/update")
 	public ResponseEntity<?> updateGuest(@RequestBody Details detail){
 		Details updateEntity = this.guestservice.updateGuest(detail);
@@ -53,10 +50,7 @@ public class Controller {
 	}
 
 
-//	@GetMapping("/get")
-//	public ResponseEntity<?> getAllGuest(){
-//		return ResponseEntity.ok(this.guestservice.getAllGuest());
-//	}
+
 	@GetMapping("/get")
 	public List<Details> getAllGuest() {
 		return guestservice.getAlGuest();

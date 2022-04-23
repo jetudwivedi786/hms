@@ -1,7 +1,7 @@
 package com.springboot.web.service;
 
 import com.springboot.web.model.InventoryDetails;
-import com.springboot.web.repository.inventoryRepo;
+import com.springboot.web.repository.InventoryRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class inventoryServiceImpl implements inventoryService{
 
     @Autowired
-    private inventoryRepo inventoryrepo;
+    private InventoryRepo inventoryrepo;
 
     @Override
     public Object getAllRooms() {
